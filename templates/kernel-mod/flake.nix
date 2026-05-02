@@ -28,8 +28,10 @@
           docker-client
         ];
 
+        # pwndbg is not in nixpkgs; add it via its own flake if you want it:
+        #   inputs.pwndbg.url = "github:pwndbg/pwndbg";
+        #   packages = [ inputs.pwndbg.packages.${system}.pwndbg ];
         linuxOnlyPackages = with pkgs; [
-          pwndbg
           gdb
           qemu
           kmod
