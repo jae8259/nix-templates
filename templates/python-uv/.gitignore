@@ -1,0 +1,13 @@
+# uv / Python runtime
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# devenv / Nix devshell cache
+.devenv/
+.direnv/
+
+# uv.lock is intentionally NOT listed here — commit it as the lockfile.
+# .python-version is only needed if you also use pyenv (uncomment if so):
+# .python-version
