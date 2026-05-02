@@ -1,0 +1,14 @@
+# Kernel build artifacts
+*.ko
+*.o
+*.mod
+*.mod.c
+Module.symvers
+modules.order
+.tmp_versions/
+
+# clangd compilation database
+compile_commands.json
+
+# direnv / Nix devshell cache
+.direnv/

@@ -1,0 +1,20 @@
+CompileFlags:
+  Add:
+    - -xc
+  Remove:
+    # GCC-specific flags that clangd rejects:
+    - -fno-allow-store-data-races
+    - -fconserve-stack
+    - -mrecord-mcount
+    - -mindirect-branch=thunk-extern
+    - -mindirect-branch-register
+    - -mfunction-return=thunk-extern
+    - -fno-stack-clash-protection
+    - -mharden-sls=*
+    - -ftrivial-auto-var-init=*
+    - -fzero-call-used-regs=*
+    - -pg
+
+Diagnostics:
+  Suppress:
+    - pp_including_mainfile_in_preamble
