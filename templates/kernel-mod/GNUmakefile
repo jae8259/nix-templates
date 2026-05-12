@@ -5,6 +5,7 @@ KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 # Where the .ko is installed inside the guest (mount the host share here).
 HOSTSHARE ?= /hostshare
 
+# Run setup.sh first — 'module' conflicts with the kernel and will fail to load.
 MODULE := module
 
 .PHONY: all clean ccdb insmod rmmod reload
