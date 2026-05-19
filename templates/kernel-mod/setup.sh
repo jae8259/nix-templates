@@ -28,6 +28,8 @@ done
 
 # Rename source file.
 mv src/module.c "src/${NAME}.c"
+sed -i "s/module: loaded/${NAME}: loaded/" "src/${NAME}.c"
+sed -i "s/module: unloaded/${NAME}: unloaded/" "src/${NAME}.c"
 
 # Update Kbuild: obj-m += module.o  →  obj-m += <name>.o
 sed -i "s/obj-m += module\.o/obj-m += ${NAME}.o/" src/Kbuild
