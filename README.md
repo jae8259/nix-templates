@@ -35,3 +35,17 @@ nix flake init -t github:YOURNAME/nix-templates#python-uv
 **The tension:** Nix and uv both want to control the Python environment. If Nix also manages packages via `python.withPackages`, you get two competing package graphs that interfere with each other. `venv.enable` has the same problem.
 
 **The resolution:** Nix is restricted to supplying `pkgs.python3` and the uv binary. Everything else — the venv, dependency resolution, lockfile — is delegated entirely to uv. `languages.python.uv.sync.enable = true` runs `uv sync` automatically on shell entry so the environment is always up to date. To add a dependency: `uv add <package>`. Never `pip install`, never `nix.withPackages`.
+
+## rust
+
+A simple Rust development environment with Cargo and editor tooling.
+
+```sh
+nix flake init -t github:YOURNAME/nix-templates#rust
+```
+
+**Package manager: Cargo** — the devshell provides `cargo`, `rustc`, `clippy`, `rustfmt`, and `rust-analyzer`.
+
+**The tension:** you want a Rust toolchain that is easy to start with and consistent across machines, without over-engineering the project before you know what it needs.
+
+**The resolution:** the template keeps the setup intentionally small. Nix pins the base toolchain through the flake input, while Cargo owns the project itself. You get a working `src/main.rs`, `Cargo.toml`, and a devshell with the standard Rust tools, and you can extend it later as your project grows.
