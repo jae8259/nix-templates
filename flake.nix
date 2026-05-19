@@ -11,6 +11,10 @@
         path = ./templates/python-uv;
         description = "Python development environment using uv for package management (via devenv)";
       };
+      rust = {
+        path = ./templates/rust;
+        description = "Rust development environment with cargo, clippy, rustfmt, and rust-analyzer";
+      };
     };
   };
 }
