@@ -11,14 +11,14 @@ MODULE := module
 .PHONY: all clean ccdb insmod rmmod reload
 
 all:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD)/src modules
+	$(MAKE) -C $(KERNELDIR) M=$(CURDIR)/src modules
 
 clean:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD)/src clean
+	$(MAKE) -C $(KERNELDIR) M=$(CURDIR)/src clean
 
 # Generate compile_commands.json for clangd.
-ccdb:
-	bear -- $(MAKE)
+ccdb: clean
+	bear -- $(MAKE) all
 
 insmod:
 	sudo insmod src/$(MODULE).ko

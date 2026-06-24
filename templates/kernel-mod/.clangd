@@ -14,6 +14,10 @@ CompileFlags:
     - -ftrivial-auto-var-init=*
     - -fzero-call-used-regs=*
     - -pg
+    - -mpreferred-stack-boundary=*
+    - -fzero-init-padding-bits=*
+    - -fmin-function-alignment=*
+    - -fsanitize=*
 
 Diagnostics:
   Suppress:

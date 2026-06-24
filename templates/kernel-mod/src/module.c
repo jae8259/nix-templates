@@ -6,18 +6,14 @@
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("jae8259");
-MODULE_DESCRIPTION("LKP: Description of your module"');
+MODULE_DESCRIPTION("LKP: Description of your module");
 
-static int __init mod_init(void)
-{
+static int __init mod_init(void) {
   pr_info("module loaded\n");
   return 0;
 }
 
-static void __exit mod_exit(void)
-{
-  pr_info("module unloaded\n"); /* prints: "Ikp: module loaded" */
-}
+static void __exit mod_exit(void) { pr_info("module unloaded\n"); }
 
 module_init(mod_init);
 module_exit(mod_exit);
