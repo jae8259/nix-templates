@@ -6,9 +6,11 @@
 Module.symvers
 modules.order
 .tmp_versions/
+src/*.cmd
 
 # clangd compilation database
 compile_commands.json
+.cache/
 
 # direnv / Nix devshell cache
 .direnv/
